@@ -46,3 +46,10 @@ test('merge three empty arrays', () => {
     const result = mergedCollection(collection_1, collection_2, collection_3);
     expect(result).toEqual([]);
 });
+test('merge arrays containing negative and zero numbers', () => {
+  const collection_1 = [-5, 0, 3];
+  const collection_2 = [-4, 2, 8];
+  const collection_3 = [9, 6, 1];
+  const result = mergedCollection(collection_1, collection_2, collection_3);
+  expect(result).toEqual([-5, -4, 0, 1, 2, 3, 6, 8, 9]);
+});
